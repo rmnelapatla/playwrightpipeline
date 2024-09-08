@@ -1,11 +1,3 @@
-pipeline {
-  agent {
-    // this image provides everything needed to run Playwright
-    docker {
-      image 'mcr.microsoft.com/playwright:v1.34.0-jammy'
-    }
-  }
-
   stages {
     // installs node dependencies
     stage('build') {
