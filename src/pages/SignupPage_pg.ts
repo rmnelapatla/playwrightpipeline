@@ -72,5 +72,13 @@ export  class SignUp {
     await expect(this.h2NewUserSignUp).toBeVisible();
    }
 
+   async signupwithuser(gender:string) {
+    if (gender === "Mrs."){
+        this.rndMrs.click();
+    }else{
+        this.rndMr.click
+    }
+
+   }
   
 }

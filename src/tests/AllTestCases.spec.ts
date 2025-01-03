@@ -58,6 +58,7 @@ test.skip('Test Case 1: Register User' , async({page}) => {
     await expect(signUp.lblAccountCreated).toBeVisible();
     await signUp.btnContinue.click();
     await signUp.lnkLogout.waitFor();
+    await signUp.signupwithuser("Mr")
 } )
 
 test('Test Case 2: Login User with correct email and password',async({page}) => {
@@ -193,5 +194,16 @@ test('Test Case 26: Verify Scroll Up without "Arrow" button and Scroll Down func
     await homePage.lblPageTop.scrollIntoViewIfNeeded();
     await page.waitForTimeout(2000);
     await expect(homePage.lblHeaderValidate).toBeVisible();
+
+})
+
+
+test("Test Case 26: dummy" , async({page}) => {
+    const homePage  = new HomePage(page);
+    await expect(homePage.lnkHomePageWithColor).toBeTruthy();
+    await homePage.lblSubscription.scrollIntoViewIfNeeded();
+    // await homePage.lblPageTop.scrollIntoViewIfNeeded();
+    // await page.waitForTimeout(2000);
+    // await expect(homePage.lblHeaderValidate).toBeVisible();
 
 })
